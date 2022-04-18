@@ -1,0 +1,11 @@
+<% if cliente_signed_in? %>
+  <ul>
+    <li><%= current_cliente.nome %></li>
+    <li><%= link_to "Sair", destroy_cliente_session_path, method: :delete %></li>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to "Entrar", new_cliente_session_path%></li>
+    <li><%= link_to "Cadastro de novo cliente", new_cliente_registration_path %></li>
+  </ul>
+<% end %>
